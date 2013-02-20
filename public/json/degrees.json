@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Information Systems",
+        "years": 3,
+        "department": "ACS",
+        "type": "BSc",
+        "required": [
+            [
+                "ACS-1803",
+                "ACS-1805"
+            ],
+            [
+                "ACS-1903",
+                "ACS-1904"
+            ],
+            [
+                "ACS-1905",
+                "One ACS course at 2000 level or above"
+            ],
+            
+
+        ]
+    },
+]

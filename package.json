@@ -1,0 +1,36 @@
+{
+    "name": "hci-project",
+    "version": "0.1.0",
+    "author": "Garrett Smith & James Mackay",
+    "description": "A site that displays the courses of degrees and departments in a tree structure.",
+    "contributors": [
+        {
+            "name": "Garrett Smith"
+        },
+        {
+            "name": "James Mackay"
+        }
+    ],
+    "bin": {
+        "hci-server": "./bin/server"
+    },
+    "scripts": {
+        "start": "node ./bin/server",
+        "test": "vows --spec --isolate",
+        "predeploy": "echo This will be run before deploying the app",
+        "postdeploy": "echo This will be run after deploying the app"
+    },
+    "dependencies": {
+        "node-static": "*"
+    },
+    "devDependencies": {
+
+    },
+    "bundleDepenedencies": {
+
+    },
+    "licenes": "MIT",
+    "engines": {
+        "node": ">=0.6"
+    }
+}
