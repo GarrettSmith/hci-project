@@ -5,11 +5,27 @@ body {
     font-size: 10px;
 }
 
+h1 {
+    font-size: 2em;
+}
+
+a, a:visited, a:hover {
+    color: #1f8fa3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 header {
     height: 20px;
     padding: 6px 12px 2px 12px;
     background: #333;
     color: white;
+    z-index: 1;
+    position: relative;
 }
 
 header h1 {
@@ -44,29 +60,174 @@ header a:hover {
     left: 0;
     bottom: 0;
     right: 424px;
-    overflow: auto;
 }
 
 #tree select {
-    -webkit-appearance: none;
     width: 100%;
-    border: none;
-    background: white;
-    padding: 4px;
-    box-shadow: 0 1px 6px #383838;
-    border-bottom: 2px solid #aaa;
 }
 
 #tree select:hover{
 }
 
-#canvas {
+#container {
     width: 100%;
 }
 
-#course-info {
-    padding: 12px;
+#info {
+    margin-top: 1px;
     float: right;
-    width: 400px;
+    width: 428px;
+}
+
+#info section {
+    padding: 0 12px 12px 12px;
+    display: none;
     overflow: auto;
+}
+
+#info section p {
+    line-height: 1.5em;
+    text-align: justify;
+    font-size: 1.1em;
+    font: serif;
+}
+
+#info select {
+    width: 400px;
+    margin: 12px 0;
+}
+
+#info #help-section {
+    display: block;
+}
+
+#info-tabs {
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    width: 428px;
+    height: 30px;
+    box-shadow: inset 0 -6px 12px -6px #999;
+}
+
+#info-tabs li {
+    float: left;
+    display: block;
+    height: 14px;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 107px;
+    text-align: center;
+}
+
+#info-tabs li:hover {
+    text-decoration: underline;
+    cursor: hand;
+}
+
+#info-tabs .active {
+    background: white;
+    box-shadow: 0 -12px 12px 0 #999;
+}
+
+#info hr {
+    clear: left;
+    border: none;
+    height: 6px;
+}
+
+.badge {
+    width: 70px;
+    padding-top: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    float: left;
+    margin-right: 2px;
+    opacity: 0.3;
+}
+
+.credit-hours, .level {
+    padding-top: 7px;
+    opacity: 1;
+}
+
+.badge span {
+    font-size: 3.5em;
+    line-height: 1em;
+    display: block;
+    margin-bottom: 11px;
+}
+
+.taken {
+    background: url(../img/badge.png) no-repeat;
+    background-position: center top;
+}
+
+.taken:hover {
+    cursor: hand;
+    opacity: 0.25;
+}
+
+.taken.set {
+    opacity: 1;
+}
+
+.taken.set:hover {
+    opacity: 0.6;
+}
+
+.science {
+    background: url(../img/science.png) no-repeat;
+    background-position: center top;
+    margin: 0;
+}
+
+.humanity {
+    background: url(../img/humanity.png) no-repeat;
+    background-position: center top;
+}
+
+.level {
+    width: 80px;
+    margin-right: 12px;
+}
+
+#info table {
+    font-size: 1.2em;
+    border-collapse: collapse;
+    margin: 0;
+    width: 100%;
+}
+
+#info thead {
+    background: rgb(242, 245, 245);
+    background:
+        -webkit-linear-gradient(top, rgb(250, 250, 250), rgb(245, 245, 245));
+    background:
+        -moz-linear-gradient(top, rgb(250, 250, 250), rgb(245, 245, 245));
+    border-bottom: 1px solid rgb(220, 220, 220);
+    border-top: 1px solid white;
+    text-align: left;
+    padding: 10px;
+    color: rgba(0,0,0,0.7);
+    text-shadow: 0 1px 0 white;
+}
+
+#info th {
+  border-right: 1px solid rgba(0,0,0,0.1);
+  padding: 4px;
+}
+
+#info th:last-child {
+  border: none;
+}
+
+#info td {
+  padding: 6px 4px 6px 4px;
+}
+
+#info tbody tr:nth-child(2n) {
+  background: hsla(210, 50%, 90%, 0.4);
 }

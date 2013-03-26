@@ -1,14 +1,16 @@
-[
-    {
-        "id": "template",
+{
+    "default": {
+        "id": "",
         "name": "",
         "number": "",
         "description": "",
         "department": "",
-        "creditHours": 3,
+        "notes": "",
+        "level": "UUG",
+        "credit-hours": 3,
         "science": false,
         "humanity": false,
-        "prereq": [
+        "prereqs": [
 
         ],
         "coreqs": [
@@ -16,61 +18,56 @@
         ],
         "restrictions": [
 
-        ]
+        ],
+        "taken": false
     },
-    {
+    "ACS-1903": {
         "id": "ACS-1903",
         "name": "Programming Fundamentals I",
         "number": "1903",
         "description": "This course introduces fundamental programming concepts using an object-oriented programming language. Topics to be covered include primitive data types and their manipulation, control structures, classes, objects and arrays. ",
         "department": "ACS",
-        "creditHours": 3,
+        "credit-hours": 3,
         "science": true,
         "humanity": false,
-        "prereq": [
-            [
-                "PRECALC"
-            ],
-            [
-                "APPLIED"
-            ],
-            [
-                "ACS-1805"
-            ]
+        "prereqs": [
+            "PRECALC",
+            "OR",
+            "APPLIED",
+            "OR",
+            "ACS-1805"
         ],
         "coreqs": [  ],
         "restrictions": [  ]
     },
-    {
+    "ACS-1904": {
         "id": "ACS-1904",
         "name": "Programming Fundamentals II",
-        "number": "1903",
+        "number": "1904",
         "description": "This course examines more advanced programming concepts using an object-oriented programming language. Topics to be covered include inheritance, polymorphism, sorting techniques, string processing, interfaces, files and packages.",
         "department": "ACS",
-        "creditHours": 3,
+        "credit-hours": 3,
         "science": true,
         "humanity": false,
-        "prereq": [
-            [
-                "ACS-1903"
-            ]
+        "prereqs": [
+            "ACS-1903"
         ],
         "coreqs": [  ],
         "restrictions": [  ]
     },
-    {
+    "ACS-2814": {
         "id": "ACS-2814",
         "name": "Applications of Database Systems",
         "number": "2814",
         "description": "This course introduces students with limited computing experience to the principles of data management. The emphasis is on practical database experience reinforced through assignments and weekly laboratory work. Students learn first to work with a workstation-based database system and subsequently they are introduced to the design of databases and their implementation in relational systems. Topics include tables, queries, forms, reports, importing and exporting data, structured query language, entity relationship models, the relational data model, and normalization of databases. Examples, assignments, and laboratory work are drawn from a variety of different disciplines. ",
         "department": "ACS",
-        "creditHours": 3,
+        "credit-hours": 3,
         "science": true,
         "humanity": false,
-        "prereq": [  ],
+        "prereqs": [  ],
         "coreqs": [  ],
         "restrictions": [
             "ACS-2914"
         ]
-    },
-]
+    }
+}

@@ -9,7 +9,7 @@ require('http').createServer(function (request, response) {
         file.serve(request, response, function(e, res) {
             if (e) {
                 switch(e.status) {
-                    case 404: 
+                    case 404:
                         file.serveFile('/404.html', 404, {}, request, response);
                         break;
                     case 505:

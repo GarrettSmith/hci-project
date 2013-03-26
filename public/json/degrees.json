@@ -1,24 +1,59 @@
-[
-    {
+{
+    "default" : {
+        "id": "",
+        "name": "",
+        "years": 3,
+        "department": "",
+        "type": "",
+        "admission-reqs": "",
+        "req-hours": 90,
+        "residence-reqs": {
+            "degree": 30,
+            "major": 18
+        },
+        "general-reqs": {
+            "humanities": 12,
+            "science": 6,
+            "writing": "Minimum 3 credit hours of Academic Writing",
+            "max-introductory": "Students may use a maximum of 42 credit hours at the 1000 level. Of these, a maximum of 6 credit hours may be below the 1000 level.",
+            "distribution": "Minimum three (3) credit hours from each of five (5) different subjects."
+        },
+        "major-reqs": {
+            "single": "Minimum 36 credit hours/Maximum 48 credit hours in the Major subject. Major courses are those in Required Courses and Electives. ",
+            "double": "30 or 36 credit hours in each Major subject or program, as specified. "
+        },
+        "required-courses": [
+
+        ],
+        "electives" : [
+
+        ],
+        "notes": ""
+    },
+
+    "info3bsc": {
+        "id": "info3bsc",
         "name": "Information Systems",
         "years": 3,
         "department": "ACS",
+        "description": "",
         "type": "BSc",
-        "required": [
+        "admission-reqs": "",
+        "required-courses": [
             [
                 "ACS-1803",
                 "ACS-1805"
             ],
+            "OR",
             [
                 "ACS-1903",
                 "ACS-1904"
             ],
+            "OR",
             [
                 "ACS-1905",
                 "One ACS course at 2000 level or above"
-            ],
-            
-
+            ]
         ]
-    },
-]
+    }
+}

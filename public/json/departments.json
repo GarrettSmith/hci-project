@@ -1,0 +1,18 @@
+{
+    "default": {
+        "name": "",
+        "description": "",
+        "chair": "",
+        "professors": [ ],
+        "website": ""
+    },
+    "ACS": {
+        "name": "Applied Computer Sciences",
+        "description": "The Applied Computer Science program (formerly Business Computing) focuses on the theory and application of computing in business and scientific environments. The rapidly growing field of applied computing offers an exciting range of careers from web application development to project management. The Applied Computer Science curriculum includes a wide range of courses that prepare you for a career as a systems analyst, designer, application programmer, database specialist, software engineer, or project manager. Our courses are designed to develop skills in object-oriented programming, systems analysis and design, database design, graphical user-interface design, development tools, and project management. We also offer state-of-the art courses in data warehousing, internet programming, telecommunications, and system administration. Our team-oriented courses are meant to strengthen communication skills, expose you to group dynamics, and foster self-confidence. Our program will help you develop analytical thinking and software design and development skills by blending theoretical and practical aspects of applied computing. The combination of core subjects and in-depth study in an area of application gives you the freedom to combine your interests in computing with other areas of study and application. The study of a second discipline gives you the necessary background to apply your knowledge effectively.\n The Applied Computer Science program is designed to provide an excellent basis for graduate studies in either computer science or applied computing.\n Depending on the courses you choose, this program can lead to a Bachelor of Arts (3-year or 4-year) or a Bachelor of Science (3-year or 4-year) and Honours. We recommend the four-year degree programs due to the greater depth of study.",
+        "chair": "S. Liao",
+        "professors": [
+            "S. Liao"
+        ],
+        "website": "http://www.acs.uwinnipeg.ca"
+    }
+}
