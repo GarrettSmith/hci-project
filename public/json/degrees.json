@@ -30,7 +30,27 @@
         ],
         "notes": ""
     },
-
+    "acs3bsc": {
+        "id": "acs3bsc",
+        "name": "Applied Computer Science",
+        "years": 3,
+        "department": "ACS",
+        "description": "",
+        "type": "BSc",
+        "admission-reqs": "",
+        "required-courses": [
+            ["MATH-1401","ACS-1903", "ACS-1904"],
+            ["ACS-1905"],
+            "ACS-2906",
+            "ACS-2909",
+            "ACS-2913",
+            "ACS-2914",
+            "ACS-2947",
+            ["ACS-2941"],
+            ["ACS-3911"],
+            ["ACS-3931","ACS-3902","ACS-3913"]
+        ]
+    },
     "info3bsc": {
         "id": "info3bsc",
         "name": "Information Systems",
@@ -44,15 +64,11 @@
                 "ACS-1803",
                 "ACS-1805"
             ],
-            "OR",
             [
                 "ACS-1903",
                 "ACS-1904"
             ],
-            "OR",
-            [
-                "ACS-1905",
-                "One ACS course at 2000 level or above"
+            [   "ACS-1905"
             ]
         ]
     }

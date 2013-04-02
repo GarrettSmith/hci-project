@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 10px;
+    font-family: 'Droid Sans', sans-serif;
 }
 
 h1 {
@@ -37,7 +38,7 @@ header h1 {
     padding: 0;
 }
 
-header a {
+header a, header a:visited {
     float: right;
     display: block;
     color: inherit;
@@ -59,30 +60,28 @@ header a:hover {
     top: 29px;
     left: 0;
     bottom: 0;
-    right: 424px;
-}
-
-#tree select {
-    width: 100%;
-}
-
-#tree select:hover{
+    right: 524px;
 }
 
 #container {
+    position:relative;
     width: 100%;
 }
 
 #info {
     margin-top: 1px;
     float: right;
-    width: 428px;
+    width: 528px;
 }
 
 #info section {
     padding: 0 12px 12px 12px;
     display: none;
+}
+
+.content {
     overflow: auto;
+    padding-right: 12px;
 }
 
 #info section p {
@@ -93,7 +92,7 @@ header a:hover {
 }
 
 #info select {
-    width: 400px;
+    width: 500px;
     margin: 12px 0;
 }
 
@@ -105,7 +104,7 @@ header a:hover {
     background: #f5f5f5;
     margin: 0;
     padding: 0;
-    width: 428px;
+    width: 528px;
     height: 30px;
     box-shadow: inset 0 -6px 12px -6px #999;
 }
@@ -145,7 +144,7 @@ header a:hover {
     font-size: 1.2em;
     float: left;
     margin-right: 2px;
-    opacity: 0.3;
+    opacity: 0.1;
 }
 
 .credit-hours, .level {
@@ -170,7 +169,7 @@ header a:hover {
     opacity: 0.25;
 }
 
-.taken.set {
+.set {
     opacity: 1;
 }
 
@@ -230,4 +229,27 @@ header a:hover {
 
 #info tbody tr:nth-child(2n) {
   background: hsla(210, 50%, 90%, 0.4);
+}
+
+.redraw {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    background: #f0f0f0 url(../img/refresh.png) no-repeat;
+    background-position: 6px 6px;
+    border: solid #bdbdbd 1px;
+    border-bottom: none;
+    padding: 10px 8px 6px 36px;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 0 0 6px 6px #ddd;
+    font-weight: bold;
+    cursor: pointer;
+    transition-property: background-color, padding-bottom;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.redraw:hover {
+    padding-bottom: 10px;
+    background-color: white;
 }

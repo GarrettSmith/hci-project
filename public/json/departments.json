@@ -11,8 +11,41 @@
         "description": "The Applied Computer Science program (formerly Business Computing) focuses on the theory and application of computing in business and scientific environments. The rapidly growing field of applied computing offers an exciting range of careers from web application development to project management. The Applied Computer Science curriculum includes a wide range of courses that prepare you for a career as a systems analyst, designer, application programmer, database specialist, software engineer, or project manager. Our courses are designed to develop skills in object-oriented programming, systems analysis and design, database design, graphical user-interface design, development tools, and project management. We also offer state-of-the art courses in data warehousing, internet programming, telecommunications, and system administration. Our team-oriented courses are meant to strengthen communication skills, expose you to group dynamics, and foster self-confidence. Our program will help you develop analytical thinking and software design and development skills by blending theoretical and practical aspects of applied computing. The combination of core subjects and in-depth study in an area of application gives you the freedom to combine your interests in computing with other areas of study and application. The study of a second discipline gives you the necessary background to apply your knowledge effectively.\n The Applied Computer Science program is designed to provide an excellent basis for graduate studies in either computer science or applied computing.\n Depending on the courses you choose, this program can lead to a Bachelor of Arts (3-year or 4-year) or a Bachelor of Science (3-year or 4-year) and Honours. We recommend the four-year degree programs due to the greater depth of study.",
         "chair": "S. Liao",
         "professors": [
-            "S. Liao"
+            "S. Liao",
+            "S. Ramanna",
+            "Y. Chen",
+            "P. Atrey",
+            "R. McFadyen",
+            "J. Deng", 
+            "E. Kaluzniacky" 
         ],
         "website": "http://www.acs.uwinnipeg.ca"
+    },
+    "PHYS": {
+        "name": "Physics",
+        "chair": " R. Kobes",
+        "description": "Physics is the study of nature at its most fundamental level. Its purpose is to formulate theories that accurately account for the behaviour of observed phenomena at all levels, from the microscopic world of the atom to the vast reaches of the universe as a whole. In the process of trying to understand nature, physics often makes surprising discoveries that revolutionize the world. Such discoveries include lasers, the electronic processes underlying today’s compact, high-speed computers and the nuclear processes behind medical imaging systems such as MRI’s. Even the World Wide Web was developed by particle physicists as a graphics- based communications system to enable them to share information.\n A degree in Physics can lead to careers in teaching at the school or university level and research in universities, government labs and high-tech industry. Physicists acquire skills that are also useful in a wide variety of other fields, such as engineering, health sciences and finance. Specialized streams in chemical, mathematical, and computational physics are available for those wanting to pursue studies in one of these cross-disciplinary fields.\n Those students interested in Engineering may wish to consider the dual degree option offered in conjunction with the University of Minnesota. Under this program a student completes a 3 year B. Sc. Degree at the University of Winnipeg and then can obtain an Engineering degree after two years at the Institute of Technology at the University of Minnesota. Further details are available in the calendar, on the University of Winnipeg’s web site, or from the Department of Physics office. ",
+        "professors": [
+            "S. Dannefaer", 
+            "G. Kunstatter", 
+            "D. Vincent", 
+            "C. Bidinosti",
+            "J. Martin",
+            "M. Martin"
+        ],
+        "website": "http://physics.uwinnipeg.ca"
+    },
+    "MATH": {
+        "name": "Mathematics",
+        "description": "Mathematics is the supreme intellectual achievement and the most original creation of the human spirit - Morris Kline.\n Mathematics is the Queen and servant of the Sciences - Karl Friedrich Gauss.\n Mathematics is just more and more complicated ways of saying `Pigs is pigs' - Bertrand Russell.\n The scope of Mathematics ranges from Computer Science to Philosophy, from Physics to Finance. Mathematics emphasizes precision and logic, but also creativity and problem solving. Students heading for Law or Medicine are well-served by a first degree in Mathematics. Other graduates move into the financial sector or high technology. Some graduates choose to go on to advanced degrees, not only in Mathematics, but also in Statistics, Computer Science, Meteorology or Physics.\n The department offers 3-Year and 4-Year BA and BSc degrees, and the Honours BSc. It features one of the highest levels of research activity in the University, and offers students a unique glimpse into the ongoing creation of Mathematics. ",
+        "chair": "J. Currie",
+        "professors": [
+            "O.R. Oellermann", 
+            "T. Visentin", 
+            "V. Linek", 
+            "A. Stokke", 
+            "R. Stokke"
+        ],
+        "website": "http://mathstat.uwinnipeg.ca"
     }
 }

@@ -1,29 +1,33 @@
 <HTML>
     <head>
-        <title>HCI Project</title>
+        <title>Interactive Course Calendar</title>
 
         <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
-        <script type="text/javascript" src="js/jquery.jsPlumb-1.3.16-all.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.10.2.custom.js"></script>
-
         <script src="js/chosen/chosen.jquery.min.js" type="text/javascript"></script>
+
+        <!-- Tree Scripts -->
+        <script type="text/javascript" src="js/arbor.js"></script>
+        <script type="text/javascript" src="js/graphics.js"></script>
+        <script type="text/javascript" src="js/renderer.js"></script>
+
 
         <!-- This is the driver for the app -->
         <script type="text/javascript" src="js/app.js"></script>
-        
-        <link href="css/tree.css" rel="stylesheet" type="text/css" media="all">
 
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400' rel='stylesheet' type='text/css'>
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
         <link rel="stylesheet" href="js/chosen/chosen.css" type="text/css" media="all"/>
     </head>
     <body>
         <header>
-            <h1>HCI Project</h1>
-            <a href="about.html" alt="About HCI Project">About</a>
+            <h1>Interactive Course Calendar</h1>
+            <a href="" alt="">User Name</a>
         </header>
         <section id="tree">
             <select name="degree-select" id="degree-select"> </select>
-            <div id = "container"> </div>
+            <div id = "container">
+                <canvas id = "viewport"></canvas>
+            </div>
         </section>
         <section id="info">
             <ul id="info-tabs">
@@ -60,11 +64,11 @@
                 <p>
                     The tree pane displays a tree of courses required for the
                     degree selected from the degree select dropdown, located at
-                    the top of the pane. From within the tree pane you may select
-                    a course to view within the information pane, and mark courses
-                    as taken. Once a course has been marked as taken, the corresponding
-                    nodes and connections from that node will be highlighted to
-                    visually show your progress through the degree.
+                    the top of the pane. Displayed courses are colour coded by 
+                    virtue of dependencies; The warmer the colour, the more 
+                    courses within the selected degree depend on it. Course tree
+                    nodes can be clicked to view additional information within 
+                    the information pane. 
                 </p>
                 <h2>Information Pane</h2>
                 <h3>Courses Tab</h3>

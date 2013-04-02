@@ -19,7 +19,38 @@
         "restrictions": [
 
         ],
-        "taken": false
+        "taken": false,
+        "cross-listed": ""
+    },
+    "ACS-1453": {
+        "id": "ACS-1453",
+        "name": "Introduction to Computers",
+        "number": "1453",
+        "description": "This course will introduce students to the basic concepts of computers: types of computers, hardware, software, and types of application systems. Students will receive instruction in a variety of software intended for personal use. Software used will include word processing, spreadsheets, databases, charting and graphing tools, and common Internet clients and resources. There will be an extensive laboratory component.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "notes": "This course does not apply toward the Major in Applied Computer Science. "
+    },
+    "ACS-1803": {
+        "id": "ACS-1803",
+        "name": "Introduction to Information Systems",
+        "number": "1803",
+        "description": "This course examines applications of information technology to businesses and other organizations. After an introduction to computers and data management, the course outlines various categories of information systems, (e.g., systems for transaction processing, managerial reporting, customer relationship management, decision support, enterprise resource planning, and e-commerce), with examples from current practice. System development, system security, systems consulting, and IT administration are also discussed. Focus is mostly on functional aspects of systems providing a valuable background for students in applied computer science, business and administration, and other disciplines.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "notes": "Students who require an introduction to personal computers and productivity software should take ACS-1453."
+    },
+    "ACS-1805": {
+        "id": "ACS-1805",
+        "name": "Introduction to Programming",
+        "number": "1805",
+        "description": "This course covers elementary procedural programming concepts. Topics include: primitive data types and their manipulation, basic input and output and elementary control structures. In addition, topics related to a specific programming paradigm that is chosen for the course is covered. Students will gain hands-on programming experience in the laboratory component of the course",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false
     },
     "ACS-1903": {
         "id": "ACS-1903",
@@ -31,11 +62,9 @@
         "science": true,
         "humanity": false,
         "prereqs": [
-            "PRECALC",
-            "OR",
-            "APPLIED",
-            "OR",
-            "ACS-1805"
+            ["Precalculus 40s"],
+            ["Applied Mathematics 40s"],
+            ["ACS-1805"]
         ],
         "coreqs": [  ],
         "restrictions": [  ]
@@ -55,6 +84,57 @@
         "coreqs": [  ],
         "restrictions": [  ]
     },
+    "ACS-1905": {
+        "id": "ACS-1905",
+        "name": "Programming Fundamentals",
+        "number": "1905",
+        "description": "This course assumes that students already have working knowledge of an object-oriented programming language as well as effective use of data types and control structures. This course begins with an overview of the object-oriented programming language and then more advanced topics in order to extend the student’s programming skill. Topics to be covered include inheritance, polymorphism, sorting techniques, string processing, interfaces, files and packages.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+                "75 in Computer Science 40S (or equivalent)",
+                ["Precalculus 40s"],
+                ["Applied Mathematics 40s"],
+                ["ACS-1805"]
+            
+            
+        ],
+        "coreqs": [  ],
+        "restrictions": [
+            "ACS-1903",
+            "ACS-1904"
+        ]
+    },
+    "ACS-2102": {
+        "id": "ACS-2102",
+        "name": "Scientific Computing I",
+        "number": "2102",
+        "description": "Many problems arising in science are too difficult to solve analytically, and thus require analysis of some form by a computer. Using the language of C/C++, this course introduces the most common programming constructs used in scientific computing. The critical importance of data structures to represent information is emphasized, which naturally leads to an object-oriented approach to problem solving. The use of external libraries, such as those for numerical analysis, to solve more advanced problems are explored, with attention paid to checks that can be made on the reliability of the results. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [ ],
+        "coreqs": [  ],
+        "restrictions": [ ],
+        "cross-listed": "PHYS-2102"
+    },
+    "PHYS-2102": {
+        "id": "PHYS-2102",
+        "name": "Scientific Computing I",
+        "number": "2102",
+        "description": "Many problems arising in science are too difficult to solve analytically, and thus require analysis of some form by a computer. Using the language of C/C++, this course introduces the most common programming constructs used in scientific computing. The critical importance of data structures to represent information is emphasized, which naturally leads to an object-oriented approach to problem solving. The use of external libraries, such as those for numerical analysis, to solve more advanced problems are explored, with attention paid to checks that can be made on the reliability of the results. ",
+        "department": "PHYS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [ ],
+        "coreqs": [  ],
+        "restrictions": [ ],
+        "cross-listed": "ACS-2102"
+    },
     "ACS-2814": {
         "id": "ACS-2814",
         "name": "Applications of Database Systems",
@@ -68,6 +148,525 @@
         "coreqs": [  ],
         "restrictions": [
             "ACS-2914"
+        ]
+    },
+    "ACS-2906": {
+        "id": "ACS-2906",
+        "name": "Computer Architecture and System Software",
+        "number": "2906",
+        "description": "The course begins with discussions of the architecture of computer hardware and progresses to an examination of system software, including its relationship to the hardware, its structure and design, and its impact on application software, system developers, and end-users. Operating system concepts such as memory management, process management, and I/O sub-systems will be covered. Other topics include language processors, system utilities, security issues, and performance management.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-1904"],
+            ["ACS-1905"]
+        ],
+        "coreqs": [
+            "MATH-1401"
+        ],
+        "restrictions": [ ]
+    },
+    "MATH-1401": {
+        "id": "MATH-1401",
+        "name": "Discrete Mathematics",
+        "number": "1401",
+        "description": "This course includes the study of permutations and combinations, the binomial theorem, basic set theory and logic, functions, relations, partial orders, and mathematical induction. This course is primarily intended for students planning to major in Mathematics. ",
+        "department": "MATH",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["Precalculus 40s"],
+            ["Applied Mathematics 40s"]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [ ]
+    },
+    "ACS-2909": {
+        "id": "ACS-2909",
+        "name": "Introduction to Internet Programming",
+        "number": "2909",
+        "description": " This course provides students with an overview of the Internet and World Wide Web tools and resources, Internet utilities, multimedia, and security issues. Students will gain considerable hands-on experience in Internet Hypertext Markup Language (HTML), Applets and in a scripting language such as JavaScript. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-1903"],
+            ["ACS-1905"]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [ ]
+    },
+    "ACS-2913": {
+        "id": "ACS-2913",
+        "name": "Software Requirements Analysis and Design",
+        "number": "2913",
+        "description": "This course introduces students to the requirements definition phase of software development. It provides coverage of both traditional and object-oriented approaches to requirements analysis and design of software used in business, real-time and embedded applications. Models, notations and processes for requirements elicitation, representation, and design are discussed. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-1903"],
+            ["ACS-1905"]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-2914": {
+        "id": "ACS-2914",
+        "name": "Relational Database Application Development",
+        "number": "2914",
+        "description": "This course is an introduction to Relational Database Management Systems. It serves to provide students with an overview of the relational model and to give students practical experience using a modern desktop database management system. Students are introduced to topics such as the relational data model, entity- relationship modelling, business rules, normalization, and database design. The course has a strong focus on practical issues in database application development. Students will gain considerable hands-on experience in application development involving tables, indexes, forms, reports, queries, data entry, updating, event-handling, security, and publishing of data on the Internet. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-1904"],
+            ["ACS-1905"]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+            "ACS-2814"
+        ]
+    },
+    "ACS-2916": {
+        "id": "ACS-2916",
+        "name": "Business Application Systems",
+        "number": "2916",
+        "description": "This course firstly presents structured models for business processes and data needed in common transaction processing systems such as order entry, invoicing, accounts receivable and payable, purchasing, inventory and general ledger. Also, system support for manufacturing (e.g., supply chain management, robotics), for marketing (e.g., sales force automation, customer relationship management), and for human resource management (e.g., candidate selection, collective bargaining support) is highlighted, and inter- system interfaces are considered. Large, organization-wide, integrated enterprise resource planning (ERP) systems are discussed in the context of a business case. System controls and security issues are outlined for the systems studied. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-1803"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-2941": {
+        "id": "ACS-2941",
+        "name": "UNIX",
+        "number": "2941",
+        "description": "This course provides students with advanced concepts and knowledge of Unix, one of the most widely used operating systems. The course introduces students to such topics as shells, filters and pipelines, the Unix file system, processes and job control, and Internet communications. Emphasis is placed on Unix shell programming, which provides valuable tools for developing powerful applications with a minimal amount of written code. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-1904"],
+            ["ACS-1905"]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-2947": {
+        "id": "ACS-2947",
+        "name": "Data Structures and Algorithms",
+        "number": "2947",
+        "description": "This course introduces fundamental data structures using an object-oriented programming language. Topics to be covered include vectors, multidimensional arrays, linked lists, stacks, queues, trees, graphs, recursion and algorithms. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-1904"],
+            ["ACS-1905"]
+        ],
+        "coreqs": [
+            "MATH-1401"
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-2951": {
+        "id": "ACS-2951",
+        "name": "Principles in Information Systems",
+        "number": "2951",
+        "description": " This course covers basic system administration issues of Unix and Windows operating systems (OS), principles of networking, and TCP/IP (the Internet). Students are introduced to topics such as system installation and maintenance, system, and network security and setting up different application servers such as web and SQL. Students will gain considerable hands-on experience in installing, managing, and trouble-shooting networks on the Linux and Windows platforms ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2941"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3801": {
+        "id": "ACS-3801",
+        "name": "Principles in Information Systems",
+        "number": "3801",
+        "description": "This course is the final course for the 3 year degree in the Information Systems stream. The course can provide integration (e.g., project management), or provide more depth in specific areas of Information Systems in order to address specific thematic needs. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            ["ACS-2814"],
+            [
+                "ACS-2914",
+                "ACS-2909",
+                "ACS-2913",
+                "ACS-2916"
+            ]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+            "ACS-3901"
+        ],
+        "notes": "Department chair's permission required"
+    },
+    "ACS-3913": {
+        "id": "ACS-3913",
+        "name": "Software Design and Architecture",
+        "number": "3913",
+        "description": "This is an advanced course in software design that examines recent advances in the design of larger application systems. Topics include software architecture, object- oriented analysis and design, software patterns, and the Unified Modeling Language (UML).",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913",
+            "ACS-2947"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3916": {
+        "id": "ACS-3916",
+        "name": "Graphical User Interface",
+        "number": "3916",
+        "description": "This course investigates the principles of graphical user interface design. Topics covered in this course include GUI design guidelines and processes, user interface specification and software tools, reviews and testing. Design guidelines such as menu layout, form-filling, dialog boxes and error messages will be illustrated using the VB development tool. The topics related to VB include controls, custom menus, multiple forms, standard code modules, data validation, and error trapping. Issues related to client-server development will also be discussed. Emphasis will be placed on extensive hands-on experience through assignments and a course-end project.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2914"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+            "ACS-3916",
+            "ACS-3816"
+        ]
+    },
+    "ACS-3923": {
+        "id": "ACS-3923",
+        "name": "Technical Writing",
+        "number": "3923",
+        "description": "This course will discuss principles, strategies, and techniques of writing in a systems environment. Topics include the writing process; invention, structuring, and drafting strategies; identifying audience and purpose; business and technical correspondence; project documentation; user documentation; presentations, both technical and executive; and the readability of documents, from the high-level structure down to the sentence and word levels. This course will include many practical exercises in course topics.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3930": {
+        "id": "ACS-3930",
+        "name": "Topics in Applied Computer Science",
+        "number": "3930",
+        "description": "This course treats specific topics in various areas of applied computer science of interest to the student and faculty member",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913",
+            "ACS-2947"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3931": {
+        "id": "ACS-3931",
+        "name": "Principles in Operating Systems",
+        "number": "3931",
+        "description": "This course covers the principles and design of operating systems. In the first half of the course students are introduced to multiprogramming and become familiar with the process and thread abstractions. Students are introduced to concurrent programming. Topics include: mutual exclusion, synchronization, and inter-process communication. The second half of the course introduces students to the roles and components of operating systems, and how these components interact. Topics include process control, memory management, file systems, and input/output.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2906",
+            "ACS-2947"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3941": {
+        "id": "ACS-3941",
+        "name": "Implementation Issues in Object Oriented Languages",
+        "number": "3941",
+        "description": "This course focuses on advanced features of a contemporary OO language. Emphasis is on implementation issues and strengthening programming skills of students. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913",
+            "ACS-2947"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3947": {
+        "id": "ACS-3947",
+        "name": "Algorithm Design",
+        "number": "3947",
+        "description": "This course focuses on the connection between data structures and the corresponding algorithms, including simple analysis of computational complexity. The emphasis is on comparative study of alternate ways to implement solutions to computing problems.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913",
+            "ACS-2947"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-4901": {
+        "id": "ACS-4901",
+        "name": "Senior Systems Development Project",
+        "number": "4901",
+        "description": "This course applies the principles and techniques of software project management covered in ACS- 3901(3) to a significant systems development project undertaken by students in teams. A project proposal, project plan, regular status reports, and a completion report are required. All work must conform to proper analysis, design, programming, and documentation standards. Each team holds status reviews at appropriate life-cycle milestones. A final presentation and a formal demonstration of the system are required at the end of the project.",
+        "department": "ACS",
+        "credit-hours": 6,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2914",
+            "ACS-3901",
+            "ACS-3902",
+            "ACS-3913"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ],
+        "notes": "A  minimum average GPA of 2.0 in all ACS-xxxx courses previously taken."
+    },
+    "ACS-4902": {
+        "id": "ACS-4902",
+        "name": "Advanced Database Systems",
+        "number": "4902",
+        "description": "This course is a continuation of ACS-3902(3). It deals with advanced topics in database design, use, and administration. Database design topics include enhanced ER diagrams and object-oriented data modelling. Other topics include transaction processing, concurrency control and recovery, security, and integrity. Object-oriented databases and client-server architectures will also be discussed.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2947",
+            "ACS-3902"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-4904": {
+        "id": "ACS-4904",
+        "name": "Data Warehousing",
+        "number": "4904",
+        "description": "This course explores the role of data warehouses in supporting decision- making in organizations. Topics include definition of a data warehouse; extracting, cleansing, and transforming data; building and maintaining the warehouse; meta data; dimensional analysis and multidimensional modeling; multidimensional data structures; Star schemas; OLAP (On Line Analytical Processing); drilling down and across; and web deployment.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913",
+            "ACS-3902",
+            "ACS-3902"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-4930": {
+        "id": "ACS-4930",
+        "name": "Research Project in Applied Computer Science",
+        "number": "4930",
+        "description": "This course is designed to allow a student to conduct a specific research project under the supervision of a faculty member. An essential component of the course is an oral presentation and a written report of the results. Approval for the planned project must be obtained from the supervising faculty member as well as from the Department Chair before enrolment. ",
+        "department": "ACS",
+        "credit-hours": 6,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "Completed 30 credits in ACS"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ],
+        "notes": "Students must have written permission from the Department Chair to register for this course."
+    },
+    "ACS-4931": {
+        "id": "ACS-4931",
+        "name": "Research Project in Applied Computer Science",
+        "number": "4931",
+        "description": "This course is designed to allow a student to conduct a specific research project under the supervision of a faculty member. An essential component of the course is an oral presentation and a written report of the results. Approval for the planned project must be obtained from the supervising faculty member as well as from the Department Chair before enrolment. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "Completed 30 credits in ACS"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ],
+        "notes": "Students must have written permission from the Department Chair to register for this course."
+    },
+    "ACS-4946": {
+        "id": "ACS-4946",
+        "name": "Web Application Design and Development",
+        "number": "4946",
+        "description": "This course will discuss the analysis, design, construction and implementation of web- based and client-server systems. Other topics include Client-Server and Web testing, Client-Server and Web Technology Architecture and Support Services and Web Database Application design and programming issues.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2947",
+            "ACS-3913"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-4953": {
+        "id": "ACS-4953",
+        "name": "Introduction to Machine Learning",
+        "number": "4953",
+        "description": "This course is an introduction to the broad field of machine learning. Machine learning provides the technical basis for data mining. This course examines the foundations and implementations of several machine learning algorithms. Specific topics include: rule and tree-based classifiers, bayesian models, clustering techniques and numeric prediction. Popular machine learning tool sets will be used to gain practical hands-on experience in i) preparing the data, ii) applying the various learning techniques and iii) interpreting the credibility of the results.", "department": "ACS",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-3902",
+            "MATH-1401",
+            "One 3 credit hour statistics course"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-4954": {
+        "id": "ACS-4954",
+        "name": "Introduction to Distributed Systems",
+        "number": "4954",
+        "description": " This course is an introduction to the broad field of distributed systems. It focuses on introducing students to the benefits, challenges, methods, and implementations of distributed systems. Reasons for deploying distributed systems, such as fault tolerance and agglomeration of computational resources are discussed. Other topics include implementation challenges such as synchronization and replication in the presence of faults. Common system architectures that address some of these challenges are also introduced. Students are expected to implement some of these architectures to reinforce the lecture material. ",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "MATH-1401",
+            "ACS-2906",
+            "ACS-3911"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3811": {
+        "id": "ACS-3811",
+        "name": "Telecommunications",
+        "number": "4954",
+        "description": "This course covers both analog and digital networks, including VLAN, LAN, WAN, Internet, mobile and wireless networks.  Important issues like standards, protocols, security, quality of service, network management, and networked services are discussed.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2913"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+            "ACS-3911"
+        ]
+    },
+    "ACS-3907": {
+        "id": "ACS-3907",
+        "name": "eCommerce",
+        "number": "3907",
+        "description": "In this course our students will explore new opportunities, risks, and technologies related to electronic commerce.  Both business and technical issues will be addressed.  Business issues will include the role of eCommerce in the marketing plan and organizational strategy in both business-to-customer and business-to-business contexts.  Technical topics will include architecture, application models, payment strategies and security.  This course is designed for double majors in Applied Computer Science and Business and Administration.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-1803",
+            "ACS-2909"
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+        ]
+    },
+    "ACS-3816": {
+        "id": "ACS-3816",
+        "name": "User Interfaces for Informations Systems",
+        "number": "3816",
+        "description": " This course introduces students to the principles of user interface design and provides an integrated design and development environment to  implement the learned principles in an information system component. Topics include different types of input/output interfaces, user cognitive aspects, interface design, prototyping, and evaluation in an information system. A popular user interface development  tool is introduced to illustrate the design concepts. Students obtain hands-on experience in this course through a course-end project.",
+        "department": "ACS",
+        "credit-hours": 3,
+        "science": true,
+        "humanity": false,
+        "prereqs": [
+            "ACS-2909",
+            [
+                "ACS-2814",
+                "ACS-2914"
+            ]
+        ],
+        "coreqs": [
+        ],
+        "restrictions": [
+            "ACS-3916"
         ]
     }
 }

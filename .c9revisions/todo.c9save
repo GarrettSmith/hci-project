@@ -1,0 +1,29 @@
+{"ts":1364423985379,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":["garrettsmith@live.ca"],"silentsave":true,"ts":1364423884840,"patch":[[{"diffs":[[1,"pr"]],"start1":0,"start2":0,"length1":0,"length2":2}]],"length":2,"saved":false}
+{"ts":1364423885283,"patch":[[{"diffs":[[0,"pr"],[1,"e"]],"start1":0,"start2":0,"length1":2,"length2":3}]],"length":3,"saved":false}
+{"ts":1364423886804,"patch":[[{"diffs":[[-1,"pre"]],"start1":0,"start2":0,"length1":3,"length2":0}]],"length":0,"saved":false}
+{"ts":1364423891739,"patch":[[{"diffs":[[1,"print c"]],"start1":0,"start2":0,"length1":0,"length2":7}]],"length":7,"saved":false}
+{"ts":1364423893621,"patch":[[{"diffs":[[-1,"p"],[1,"ddfbfdb"],[0,"rint c"],[1,"ourse"]],"start1":0,"start2":0,"length1":7,"length2":18}]],"length":18,"saved":false}
+{"ts":1364423897360,"patch":[[{"diffs":[[-1,"ddfbfdb"],[0,"rint"]],"start1":0,"start2":0,"length1":11,"length2":4},{"diffs":[[0,"t course"],[1,"dude\n"]],"start1":3,"start2":3,"length1":8,"length2":13}]],"length":16,"saved":false}
+{"ts":1364423899520,"patch":[[{"diffs":[[0,"rsedude\n"],[1,"wt\nf\n\n\n\n"]],"start1":8,"start2":8,"length1":8,"length2":16}]],"length":24,"saved":false}
+{"contributors":["jamesmackay10011@gmail.com"],"silentsave":false,"ts":1364424687474,"patch":[[{"diffs":[[1,"p"],[0,"rint cou"]],"start1":0,"start2":0,"length1":8,"length2":9},{"diffs":[[0,"urse"],[-1,"dude\nwt\nf\n\n\n"],[1," coreqs and prereqs in side pane\nparse courses for nodes\n    -fade untaken courses\nDATA ENTRY!\nmake questionnare for tomorrow\nrevise help panel, have it be the first panel open\nremove dragging? -done\n\nYou seem to know what to do you are familiar with how they'd need to be to be drawn"],[0,"\n"]],"start1":8,"start2":8,"length1":17,"length2":289}]],"length":297,"saved":false}
+{"contributors":["jamesmackay10011@gmail.com"],"silentsave":false,"ts":1364425831138,"patch":[[{"diffs":[[0,"? -done\n"],[1,"get science and humanity displaying properly"],[0,"\nYou see"]],"start1":204,"start2":204,"length1":16,"length2":60}]],"length":341,"saved":false}
+{"ts":1364426036985,"patch":[[{"diffs":[[0,"roperly\n"],[1,"add links in notes and descriptions, could be neet and should be too hard\n"],[0,"You seem"]],"start1":249,"start2":249,"length1":16,"length2":90}]],"length":415,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1364426484638,"patch":[[{"diffs":[[0,"roperly\n"],[1,"\n"],[0,"add link"]],"start1":249,"start2":249,"length1":16,"length2":17}]],"length":416,"saved":false}
+{"ts":1364426486668,"patch":[[{"diffs":[[0,"roperly\n"],[1,"redraw"],[0,"\nadd lin"]],"start1":249,"start2":249,"length1":16,"length2":22}]],"length":422,"saved":false}
+{"ts":1364426489946,"patch":[[{"diffs":[[0,"y\nredraw"],[1," "],[0,"\nadd lin"]],"start1":255,"start2":255,"length1":16,"length2":17}]],"length":423,"saved":false}
+{"ts":1364426493897,"patch":[[{"diffs":[[0,"\nredraw "],[1,"tree on resize"],[0,"\nadd lin"]],"start1":256,"start2":256,"length1":16,"length2":30}]],"length":437,"saved":false}
+{"ts":1364426523148,"patch":[[{"diffs":[[0," resize\n"],[1,"add \n"],[0,"add link"]],"start1":271,"start2":271,"length1":16,"length2":21}]],"length":442,"saved":false}
+{"ts":1364426526114,"patch":[[{"diffs":[[0,"ize\nadd "],[1,"corss listed"],[0,"\nadd lin"]],"start1":275,"start2":275,"length1":16,"length2":28}]],"length":454,"saved":false}
+{"ts":1364426528533,"patch":[[{"diffs":[[0,"ze\nadd c"],[-1,"o"],[0,"r"],[1,"o"],[0,"ss liste"]],"start1":276,"start2":276,"length1":18,"length2":18}]],"length":454,"saved":false}
+{"contributors":["garrettsmith@live.ca"],"silentsave":true,"ts":1364447977077,"patch":[[{"diffs":[[0,"anel"],[-1,", have it be the first panel open\nremove dragging? -done\nget science and humanity displaying properly\nredraw tree on resize\nadd cross listed\nadd links in notes and descriptions, could be neet and should be too hard\nYou seem to know what to do you are familiar with how they'd need to be to be drawn"],[1,"\ndraw taken in tables, this will prove to be more difficult then it is really worth or now"],[0,"\n"]],"start1":151,"start2":151,"length1":303,"length2":95}]],"length":246,"saved":false}
+{"ts":1364447984389,"patch":[[{"diffs":[[-1,"print course coreqs and prereqs in side pane\n"],[0,"pars"]],"start1":0,"start2":0,"length1":49,"length2":4}]],"length":201,"saved":false}
+{"ts":1364447988359,"patch":[[{"diffs":[[0,"p panel\n"],[1,"\n"],[0,"draw tak"]],"start1":103,"start2":103,"length1":16,"length2":17}]],"length":202,"saved":false}
+{"ts":1364448165868,"patch":[[{"diffs":[[0," panel\n\n"],[1,"\n"],[0,"draw tak"]],"start1":104,"start2":104,"length1":16,"length2":17}]],"length":203,"saved":false}
+{"ts":1364448169161,"patch":[[{"diffs":[[0,"ses\n"],[-1,"DATA ENTRY!"],[1,"add s"],[0,"\nmak"]],"start1":46,"start2":46,"length1":19,"length2":13}]],"length":197,"saved":false}
+{"ts":1364448170686,"patch":[[{"diffs":[[0,"es\nadd s"],[1,"ome "],[0,"\nmake qu"]],"start1":47,"start2":47,"length1":16,"length2":20}]],"length":201,"saved":false}
+{"ts":1364448173118,"patch":[[{"diffs":[[0,"dd some "],[1,"dummy"],[0,"\nmake qu"]],"start1":51,"start2":51,"length1":16,"length2":21}]],"length":206,"saved":false}
+{"ts":1364448176029,"patch":[[{"diffs":[[0,"me dummy"],[1," degrees"],[0,"\nmake qu"]],"start1":56,"start2":56,"length1":16,"length2":24}]],"length":214,"saved":false}
+{"ts":1364448179668,"patch":[[{"diffs":[[0," degrees"],[1," and maybe some co"],[0,"\nmake qu"]],"start1":64,"start2":64,"length1":16,"length2":34}]],"length":232,"saved":false}
+{"ts":1364448182448,"patch":[[{"diffs":[[0," some co"],[1,"urses from o"],[0,"\nmake qu"]],"start1":82,"start2":82,"length1":16,"length2":28}]],"length":244,"saved":false}
+{"ts":1364448186014,"patch":[[{"diffs":[[0,"s from o"],[1,"ther departments"],[0,"\nmake qu"]],"start1":94,"start2":94,"length1":16,"length2":32}]],"length":260,"saved":false}
