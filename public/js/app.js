@@ -1,4 +1,3 @@
-//
 // Garrett Smith, 3018390
 // James Mackay, 3030203
 //
@@ -696,14 +695,16 @@
     }
 
     function initArbor() {
-        var returnable = arbor.ParticleSystem(1200, 15, .5, true, 55, 0.10, .6);
+        var returnable = arbor.ParticleSystem(1000, 600, .5, false, 55, 0.02, .6);
         returnable.renderer = Renderer("#viewport");
         returnable.renderer.customNodeClick = {
             'setCourse': setCourse
         };
         $("<button/>", {'text' : "Redraw"}).addClass("redraw").click(function(e){
-            clearTree();
-            sys.merge(treeJSON);
+            sys.eachNode(function(node, pt1) {
+                node.p.x = 0;
+                node.p.y = 0;
+            });
         }).appendTo($("#container"));
         return returnable;
     }
@@ -718,12 +719,18 @@
             'nodes': {},
             'edges': {}
         };
-        treeJSON.nodes[degree.id] = {'label':degree.id,'fixed':true, 'x':-35,'y':-35,'color' : {'r':75,'g':75,'b':75,'a': 0.6}};
-        parseRequirements(degree.id, degree['required-courses']);
+        // treeJSON.nodes[degree.name] = {
+        //             'label': degree.name,
+        //             'color': "#000000",
+        //             'shape': "rectangle",
+        //             'degree': true
+        //             };
+                    
+        parseRequirements(null, degree['required-courses']);
         sys.merge(treeJSON);
     }
-
-    function parseRequirements(parentNodeID, req) {
+    
+function parseRequirements(parentNodeID, req) {
         var ors = [];
         var children = [];
 
@@ -745,14 +752,12 @@
         if (parentNodeID) {
             for (var key in children) {
                 addEdge(parentNodeID, children[key], {
-                    'length': 5,
-                    'color': {'r':175,'g':175,'b':175,'a': 0.2}
-
+                    'length': 10,
+                    'alpha' : 0.2
                 });
             }
         }
     }
-
 
     function processOrs(ors) {
         var children = [];
@@ -768,9 +773,9 @@
         var orNodeID = buildOrNode(children);
         for (var x = 0; x < children.length; x++) {
             addEdge(orNodeID, children[x],  {
-                'length': 2,
-                'weight':1,
-                'color': {'r':150,'g':205,'b':50,'a': 0.2}
+                'length': 5,
+                'color': '#4ac925',
+                'alpha' : 0.2
             });
         }
         return orNodeID;
@@ -798,9 +803,9 @@
         var andNodeID = buildAndNode(children);
         for (var x = 0; x < children.length; x++) {
             addEdge(andNodeID, children[x], {
-                'length': 2,
-                'weight':1,
-                    'color': {'r':255,'g':69,'b':0,'a': 0.2}
+                'length': 5,
+                'color': '#a10000',
+                'alpha' : .2
             });
         }
         return andNodeID;
@@ -810,8 +815,8 @@
         var ID = args.sort().toString()+"AND";
         treeJSON.nodes[ID] = {
             'label': 'AND',
-            'shape': 'dot',
-            'color': {'r':125,'g':125,'b':125,'a': 0.6}
+            'alpha' : 1,
+            'and':true
         };
         return ID;
     }
@@ -820,8 +825,8 @@
         var ID = args.sort().toString()+"OR";
         treeJSON.nodes[ID] = {
             'label': 'OR',
-            'shape': 'dot',
-            'color': {'r':125,'g':125,'b':125,'a': 0.6}
+            'alpha' : 1,
+            'or':true
         };
         return ID;
     }
@@ -829,8 +834,11 @@
     function buildCourseNode(id) {
         var data = {
                     'label': id,
-                    'color': {'r':0,'g':255,'b':255, 'a': 0.6}
-                    }
+                    'color': "#0099dd",
+                    'alpha' : 1,
+                    'shape': "rectangle",
+                    'course':true
+                    };
         if(treeJSON.nodes[id] === undefined){
             if (courses[id]) {
                 var course = $.extend(true, {}, courses[id]);
@@ -851,18 +859,27 @@
         }, data) : {};
         _target[target] = specs;
         treeJSON.edges[source] = $.extend(treeJSON.edges[source], _target);
-        if (treeJSON.nodes[target].label !== "OR" &&
-            treeJSON.nodes[target].label !== "AND" &&
-            specs.color !== 'none') {
+        
+        if(treeJSON.nodes[target].course && !treeJSON.nodes[source].degree){
             treeJSON.nodes[target].color = makeHotter(treeJSON.nodes[target].color);
         }
     }
 
-    function makeHotter(colour) {
-        colour.r = Math.min(colour.r + 100, 255);
-        colour.g = Math.max(colour.g - 55, 0);
-        colour.b = Math.max(colour.b - 120, 0);
-        return colour;
+    function makeHotter(color) {
+        var RGB = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
+        
+        var editable = {
+            r: parseInt(RGB[1], 16),
+            g: parseInt(RGB[2], 16),
+            b: parseInt(RGB[3], 16)
+        };
+        
+        editable.r = Math.min(editable.r + 255, 255);
+        if(editable.r >= 100){
+            editable.b = Math.max(editable.b - 255, 0);
+        }
+        editable.g = Math.max(editable.g - 45, 0);
+        return "#" + ((1 << 24) + (editable.r << 16) + (editable.g << 8) + editable.b).toString(16).slice(1);
     }
 
     function clearTree() {
@@ -873,5 +890,4 @@
             sys.pruneEdge(edge);
         });
     }
-
 })();

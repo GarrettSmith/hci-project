@@ -10,29 +10,34 @@
             init: function(system) {
                 particleSystem = system;
                 particleSystem.screenSize(canvas.width, canvas.height);
-                particleSystem.screenPadding(40);
+                particleSystem.screenPadding(100);
 
                 that.initMouseHandling();
             },
 
             redraw: function() {
-                if (!particleSystem){
-                    return;    
-                } 
+                if (!particleSystem) {
+                    return;
+                }
+                gfx.clear();
+
                 var nodeBoxes = {};
+                particleSystem.eachNode(function(node, pt) {
+                    var textSize = node.data.textSize || "12px";
+                    var textColor = node.data.textColor || "white";
+                    var font = node.data.font || "helvetica";
+                    var label = node.data.label || "";
+                    var color = node.data.color || "#333333";
+                    var alpha = node.data.alpha || 1;
+                    var shape = node.data.shape || 'dot';
 
-                ctx.fillStyle = "#EFEFEF";
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.globalAlpha = alpha;
+                    ctx.font = textSize + " " + font;
+                    ctx.textAlign = "center";
+                    ctx.fillStyle = color;
 
-                    // node: {mass:#, p:{x,y}, name:"", data:{}}
-                    // pt:   {x:#, y:#}  node position in screen coords
-                    particleSystem.eachNode(function(node, pt) {
-                        var label,w;
-                        
-
-                    label = node.data.label || "";
-                    w = ctx.measureText("" + label).width + 10;
-                    
+                    var w = ctx.measureText("" + label).width + 10;
+                    var h = (ctx.measureText('M').width) * 1.15;
                     if (!("" + label).match(/^[ \t]*$/)) {
                         pt.x = Math.floor(pt.x);
                         pt.y = Math.floor(pt.y);
@@ -41,33 +46,21 @@
                         label = null;
                     }
 
-                    if (node.data.color){ 
-                        var c = node.data.color;
-                        var a = c.a? c.a : 1;
-                        ctx.fillStyle = "rgba("+c.r+","+c.g+","+c.b+","+a+")";
-                    }else{
-                        ctx.fillStyle = "rgba(0,0,0,1)";
-                    } 
-
-                    if (node.data.shape == 'dot') {
+                    if (shape == 'dot') {
                         gfx.oval(pt.x - w / 2, pt.y - w / 2, w, w, {
                             fill: ctx.fillStyle
                         });
                         nodeBoxes[node.name] = [pt.x - w / 2, pt.y - w / 2, w, w];
-                    }else {
-                        gfx.rect(pt.x - w / 2, pt.y - 10, w, 20, 4, {
+                    }
+                    else {
+                        gfx.rect(pt.x - w / 2, pt.y - (h / 1.5), w, h + 2, 4, {
                             fill: ctx.fillStyle
                         });
                         nodeBoxes[node.name] = [pt.x - w / 2, pt.y - 11, w, 22];
                     }
 
                     if (label) {
-                        ctx.font = "10px Helvetica";
-                        ctx.textAlign = "center";
-                        ctx.fillStyle = "white";
-                        if (node.data.color == 'none'){
-                            ctx.fillStyle = '#333333';
-                        } 
+                        ctx.fillStyle = textColor;
                         ctx.fillText(label || "", pt.x, pt.y + 4);
                         ctx.fillText(label || "", pt.x, pt.y + 4);
                     }
@@ -77,45 +70,38 @@
                 // pt1:  {x:#, y:#}  source position in screen coords
                 // pt2:  {x:#, y:#}  target position in screen coords
                 particleSystem.eachEdge(function(edge, pt1, pt2) {
-                    var weight, color, tail, head;
-                    
-                    weight = edge.data.weight;
-                    
-                    var c = edge.data.color;
-                    var a = c.a? c.a : 1;
-                    color = "rgba("+c.r+","+c.g+","+c.b+","+a+")";
-                    
-                    if (!color || ("" + color).match(/^[ \t]*$/)){
-                        color = null ; 
-                    } 
-
-                    tail = intersect_line_box(pt1, pt2, nodeBoxes[edge.source.name]);
-                    head = intersect_line_box(tail, pt2, nodeBoxes[edge.target.name]);
+                    var weight = edge.data.weight || 1;
+                    var color = edge.data.color || "#999999";
+                    var alpha = edge.data.alpha || 0.5;
+                    var directed = edge.data.directed || true;
+                    var tail = intersect_line_box(pt1, pt2, nodeBoxes[edge.source.name]);
+                    var head = intersect_line_box(tail, pt2, nodeBoxes[edge.target.name]);
 
                     ctx.save();
                     ctx.beginPath();
                     ctx.lineWidth = (!isNaN(weight)) ? parseFloat(weight) : 1;
-                    ctx.strokeStyle = (color) ? color : "#aaaaaa";
+                    ctx.strokeStyle = color;
                     ctx.fillStyle = null;
-
+                    ctx.globalAlpha = alpha;
                     ctx.moveTo(tail.x, tail.y);
                     ctx.lineTo(head.x, head.y);
                     ctx.stroke();
                     ctx.restore();
 
                     // draw an arrowhead if this is a -> style edge
-                    if (edge.data.directed) {
-                        ctx.save()
+                    if (directed) {
+                        ctx.save();
                         // move to the head position of the edge we just drew
-                        var wt = !isNaN(weight) ? parseFloat(weight) : 1
-                        var arrowLength = 6 + wt
-                        var arrowWidth = 2 + wt
-                        ctx.fillStyle = (color) ? color : "#333333"
+                        var wt = !isNaN(weight) ? parseFloat(weight) : 1;
+                        var arrowLength = 6 + wt;
+                        var arrowWidth = 2 + wt;
+                        ctx.fillStyle = color;
+                        ctx.globalAlpha = alpha;
                         ctx.translate(head.x, head.y);
                         ctx.rotate(Math.atan2(head.y - tail.y, head.x - tail.x));
 
                         // delete some of the edge that's already there (so the point isn't hidden)
-                        ctx.clearRect(-arrowLength / 2, - wt / 2, arrowLength / 2, wt)
+                        ctx.clearRect(-arrowLength / 2, - wt / 2, arrowLength / 2, wt);
 
                         // draw the chevron
                         ctx.beginPath();
@@ -125,7 +111,7 @@
                         ctx.lineTo(-arrowLength * 0.8, - 0);
                         ctx.closePath();
                         ctx.fill();
-                        ctx.restore()
+                        ctx.restore();
                     }
 
                     if (edge.data.name) {
@@ -133,56 +119,115 @@
                         ctx.font = 'italic 11px Helvetica';
                         ctx.fillText(edge.data.name, (pt1.x + pt2.x) / 2, (pt1.y + pt2.y) / 2);
                     }
-                })
+                });
             },
             initMouseHandling: function() {
-                var pos, mouseP, nearest;
+                var pos, mouseP, nearest, oldNearest, hovered;
                 var handler = {
-                    moved: function(e) {
-                        pos = $(canvas).offset();
-                        mouseP = arbor.Point(e.pageX - pos.left, e.pageY - pos.top)
+                    clicked: function(e) {
+                        var pos = $(canvas).offset();
+                        mouseP = arbor.Point(e.pageX - pos.left, e.pageY - pos.top);
                         nearest = particleSystem.nearest(mouseP);
 
-                            if (nearest && nearest.node.data.label !== "OR" && nearest.node.data.label !== "AND" && nearest.distance < 20){
-                                $('canvas').css( 'cursor', 'pointer' );
-                                 function highlight(node){
-                                    node.data.color.a = 1;
-                                    var edges = particleSystem.getEdgesFrom(node);
-                                    for(var x = 0; x< edges.length; x++){
-                                        highlight(edges[x].target);
-                                        edges[x].data.color.a = 1;
-                                    }
-                                }highlight(nearest.node);
-                            }else{
-                                particleSystem.eachNode(function(node, pt){
-                                    node.data.color.a = 0.6;
-                                });
-                                
-                                particleSystem.eachEdge(function(edge, pt1, pt2){
-                                    edge.data.color.a = 0.2;
-                                });
+                        if (nearest.node !== null && hovered) nearest.node.fixed = true;
 
-                                $('canvas').css( 'cursor', 'default' );
-                            }
-                            console.log(particleSystem.energy().mean);
-                            if(particleSystem.energy().mean < 0.02){
-                                that.redraw();                                    
-                            }
+                        $(canvas).bind('mousemove', handler.dragged);
+                        $(window).bind('mouseup', handler.dropped);
 
                         return false;
                     },
-                    clicked: function(e) {                        
+                    dragged: function(e) {
+                        var pos = $(canvas).offset();
+                        if (!nearest) return;
+                        if (nearest !== null && nearest.node !== null) {
+                            nearest.node.p = particleSystem.fromScreen(arbor.Point(e.pageX - pos.left, e.pageY - pos.top));
+                        }
+                        return false;
+                    },
+                    dropped: function(e) {
+                        if (nearest === null || nearest.node === undefined) {
+                            return;
+                        }
+
+                        if (nearest.node !== null) {
+                            nearest.node.fixed = false;
+                            nearest.node.tempMass = 50;
+                            nearest = null;
+
+                        }
+
+                        $(canvas).unbind('mousemove', handler.dragged);
+                        $(window).unbind('mouseup', handler.dropped);
+                        return false;
+                    },
+                    mouseListen: function(e) {
                         pos = $(canvas).offset();
                         mouseP = arbor.Point(e.pageX - pos.left, e.pageY - pos.top)
                         nearest = particleSystem.nearest(mouseP);
-                        if( nearest&& nearest.node.data.label !== "OR" && nearest.node.data.label !== "AND" && nearest.distance < 20 ){
+
+                        var xrange = ((ctx.measureText("" + nearest.node.data.label).width + 10) / 2) + 10;
+                        var yrange = (((ctx.measureText('M').width) * 1.15) / 2) + 10;
+                        if (nearest.node.data.course && Math.abs(mouseP.x - nearest.screenPoint.x) < xrange && Math.abs(mouseP.y - nearest.screenPoint.y) < yrange && oldNearest != nearest) {
+                            particleSystem.eachNode(function(node, pt) {
+                                node.saved = node.saved || $.extend({}, node.data);
+                                if (node.data.course) {
+                                    node.data.alpha = 0.1;
+                                }
+                                else if (node.data.or || node.data.and) {
+                                    node.data.alpha = 0.1;
+                                }
+                            });
+                            particleSystem.eachEdge(function(edge, pt1, pt2) {
+                                edge.saved = edge.saved || $.extend({}, edge.data);
+                                edge.data.alpha = 0.1;
+                            });
+
+                            if (nearest.node.data.course) {
+                                $('canvas').css('cursor', 'pointer');
+
+                                function highlight(node) {
+                                    node.data.alpha = 1;
+                                    var edges = particleSystem.getEdgesFrom(node);
+                                    for (var x = 0; x < edges.length; x++) {
+                                        highlight(edges[x].target);
+                                        edges[x].data.alpha = 1;
+                                    }
+                                }highlight(nearest.node);
+                            }
+                        }
+                        else {
+                            particleSystem.eachNode(function(node, pt) {
+                                if (node.saved) {
+                                    node.data = $.extend({}, node.saved);
+                                    delete node.saved;
+                                }
+
+                            });
+                            particleSystem.eachEdge(function(edge, pt1, pt2) {
+                                if(edge.saved){
+                                    edge.data =  $.extend({}, edge.saved);
+                                    delete edge.saved;
+                                }
+                            });
+                            $('canvas').css('cursor', 'default');
+                        }
+                        if (particleSystem.energy().mean < 0.05) {
+                            that.redraw();
+                        }
+                    },
+                    dblclicked: function(e) {
+                        pos = $(canvas).offset();
+                        mouseP = arbor.Point(e.pageX - pos.left, e.pageY - pos.top)
+                        nearest = particleSystem.nearest(mouseP);
+                        if (nearest.node.data.course && nearest.distance < 20) {
                             that.customNodeClick.setCourse(nearest.node.name);
                         }
                         return false;
                     }
                 };
                 $(canvas).mousedown(handler.clicked);
-                $(canvas).mousemove(handler.moved);
+                $(canvas).dblclick(handler.dblclicked);
+                $(canvas).mousemove(handler.mouseListen);
             }
         }
 
@@ -203,7 +248,7 @@
                 y: boxTuple[1]
             },
             w = boxTuple[2],
-            h = boxTuple[3];
+                h = boxTuple[3];
 
             var tl = {
                 x: p3.x,
